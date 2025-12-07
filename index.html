@@ -2,19 +2,113 @@
 
 <head>
 
-<title>Slider</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Simple Carousel</title>
+
+<style>
+
+body {
+
+background-color: #deb878;
+
+}
+
+h1 {
+
+text-align: center;
+
+text-decoration: underline;
+
+text-transform: capitalize;
+
+}
+
+.carousel-container {
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+height: 300px;
+
+/* Adjust based on your image height */
+
+/* Hide all slides by default */
+
+.myslides {
+
+display: none;
+
+max-height: 100%;
+
+/* Ensure images fit within container */
+
+max-width: 100%;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<section>
+<h1>my favorite Places</h1>
 
-<img class="myslides" height="500px"
+<div class="carousel-container">
 
-src="https://ik.imagekit.io/2xkwa8s1i/img/npl_raw_images/Arti_FL/WARFLDARVPLWHS1/WARFLDARVPLWHS1_LS_1.jpg?tr=w-1200">
+<img class="myslides"
 
-</section>
+src="https://ik.imagekit.io/2xkwa8s1i/img/npl_raw_images/Arti_FL/WARFLFRONPLRDS1/WARFLFRONPLRDS1_LS_1.jpg?tr=w-1200"
+
+height="300" width="300" alt="Slide 1">
+
+<img class="myslides"
+
+src="https://ik.imagekit.io/2xkwa8s1i/img/npl_raw_images/Arti_FL/WARFLKOVRPLPKS1/WARFLKOVRPLPKS1_LS_1.jpg?tr=w-1200"
+
+height="300" width="300" alt="Slide 2">
+
+</div>
+
+<script>
+
+var index = 0;
+
+function carousel() {
+
+var i;
+
+var x = document.getElementsByClassName("myslides");
+
+for (i = 0; i < x.length; i++) {
+
+x[i].style.display = "none";
+
+}
+
+index++;
+
+if (index > x.length) {
+
+index = 1;
+
+}
+
+x[index - 1].style.display = "block";
+
+setTimeout(carousel, 2000);
+
+}
+
+carousel(); // Start the carousel when the page loads
+
+</script>
 
 </body>
 
